@@ -86,7 +86,9 @@ export const followUser = asyncHandler(async (req, res) => {
 
         //create nofitication
 
-        await Notification.crate({
+import Notification from "../models/notification.model.js";
+
+        await Notification.create({
             from: currentUser._id,
             to: targetUserId,
             type: "follow",
