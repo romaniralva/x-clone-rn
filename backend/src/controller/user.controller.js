@@ -60,7 +60,7 @@ export const followUser = asyncHandler(async (req, res) => {
 
     if(userId === targetUserId) return res.status(400).json({ error: "You cannot follow yourself" });
 
-    const CurrentUser = await User.findOne({clearkId: userId });
+    const currentUser = await User.findOne({clerkId: userId });
     const targetUser = await User.findById(targetUserId);
 
     if(!currentUser || !targetUser) return res.status(404).json( {error: "User not Found"});
