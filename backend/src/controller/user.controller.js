@@ -36,7 +36,7 @@ const userData = {
     firstName: clerkUser.firstName,
     lastName: clerkUser.lastName,
     username: clerkUser.emailAddresses[0].emailAddress.split("@")[0],   
-    profilePicture: clerkUser.imageUrl.Url || "",
+    profilePicture: clerkUser.imageUrl || "",
 };
 
 const user = await User.create(userData);
